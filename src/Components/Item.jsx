@@ -1,9 +1,18 @@
-
+import { useState } from "react"
+import Popup from "reactjs-popup"
 
 function Item({itemList}) {
-    console.log(itemList, "itemlissssst")
+    const [open, setOpen] = useState(false);
+    const closeModal = () => setOpen(false);
+    const [isDisabled, setIsDisabled] = useState(false)
+
+    const handleClick = () => {
+        setIsDisabled(true);
+        alert('Item Ordered');
+        setOpen(o => !o)
+    }
     return ( <ul>
-        {itemList.map((item, index) => {
+        {itemList.map((item) => {
 
         return (<li key={item.item_id}
             >
@@ -12,8 +21,11 @@ function Item({itemList}) {
                     <img src={item.img_url} alt={item.item_name} />
                     <h4>£{item.price}</h4>
                     <p>{item.description}</p>
-                    <button>Add to basket</button>
-                </div>
+                    
+                    <button disabled={true}type="button"
+                    onClick={handleClick}
+                    >Order Now</button> 
+                    </div>
             </li>)
     
         })}

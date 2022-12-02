@@ -14,6 +14,8 @@ function App() {
 
   const [filterCategory, setFilterCategory] = useState("");
 
+  const [basket, setBasket] = useState([])
+
   let filteredItemList = [...itemList];
 
   if (filterCategory) {
@@ -36,7 +38,11 @@ function App() {
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
       />
-      <MainSection itemList={filteredItemList} setItemList={setItemList} />
+      <MainSection
+       basket={basket}
+       setBasket={setBasket}
+       itemList={filteredItemList} 
+      setItemList={setItemList} />
     </div>
   );
 }
