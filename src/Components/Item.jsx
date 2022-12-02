@@ -4,11 +4,15 @@ function Item({itemList}) {
     console.log(itemList, "itemlissssst")
     return ( <ul>
         {itemList.map((item, index) => {
-            const {item_name} = item
-        return (<li key={item.id}
+
+        return (<li key={item.item_id}
             >
                 <div>
-                    <h2>{item_name}</h2>
+                    <h2>{item.item_name}</h2>
+                    <img src={item.img_url} alt={item.item_name} />
+                    <h4>£{item.price}</h4>
+                    <p>{item.description}</p>
+                    <button>Add to basket</button>
                 </div>
             </li>)
     

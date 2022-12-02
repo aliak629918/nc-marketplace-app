@@ -2,10 +2,10 @@ import Basket from "./Basket"
 import Categories from "./Categories"
 import YourItems from "./YourItems"
 
-function NavBar() {
+function NavBar({setSelectByName, setFilterCategory, filterCategory}) {
     return(
     <div>
-        <Categories/>
+        <Categories setSelectByName={setSelectByName} setFilterCategory={setFilterCategory} filterCategory={filterCategory}/>
         <Basket/>
         <YourItems/>
 

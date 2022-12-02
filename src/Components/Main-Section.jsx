@@ -1,8 +1,8 @@
 import ItemList from "./ItemList"
-import {useState} from "react"
 
-function MainSection() {
-const [itemList, setItemList] = useState([]);
+
+function MainSection({itemList, setItemList}) {
+
 
     return ( <div>
         <h2>Item list</h2>
