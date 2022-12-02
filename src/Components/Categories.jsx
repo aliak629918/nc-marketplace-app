@@ -7,7 +7,6 @@ function Categories({setSelectByName, setFilterCategory, filterCategory}) {
      .then((response) => response.json()
      ).then((data) => {
  setFilterCategory(data.Categories)
- console.log(data.categories, "cattt")
      });
      }, [])
 
@@ -21,7 +20,9 @@ function Categories({setSelectByName, setFilterCategory, filterCategory}) {
         handleSubmit
     }>
         <label id="Category Label"> Categories</label>
-        <select onChange={(e) => {setFilterCategory(e.target.value)}} name="Categories" id="Categories"> <option value="Electronics"> Electronics</option>
+        <select value={filterCategory} onChange={(e) => {setFilterCategory(e.target.value)}} name="Categories" id="Categories"> 
+        <option disabled={true} value="">Please select</option>
+        <option value="Electronics"> Electronics</option>
         <option value="Household">Household</option> <option value="Clothing">Clothing</option>
         </select>
     </form>
